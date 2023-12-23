@@ -1,3 +1,11 @@
+---
+name: "Feature Request"
+about: "request a new feature"
+title: "[Request]"
+labels: ""
+assignees: ""
+---
+
 ### Issue Description
 
 [Provide a brief description of the issue here.]
