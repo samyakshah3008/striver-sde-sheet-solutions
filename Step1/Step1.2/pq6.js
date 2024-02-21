@@ -6,9 +6,10 @@
 // 12
 // 1
 
-for (i = 5; i > 0; i--) {
+for (i = 5; i >= 1; i--) {
+  let str = "";
   for (j = 1; j <= i; j++) {
-    console.log(j, " ");
+    str += j;
   }
-  console.log("\n");
+  console.log(str);
 }

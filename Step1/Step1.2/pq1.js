@@ -6,9 +6,10 @@
 // *****
 // *****
 
-for (i = 0; i < 4; i++) {
-  for (j = 0; j < 4; j++) {
-    console.log("*");
+for (i = 0; i < 5; i++) {
+  let str = "";
+  for (j = 0; j < 5; j++) {
+    str += "*";
   }
-  console.log("\n");
+  console.log(str);
 }
