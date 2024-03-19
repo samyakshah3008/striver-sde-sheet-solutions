@@ -3,7 +3,7 @@ const sum = (n, index = 1) => {
   if (index <= n) {
     accumulator = accumulator + index;
     index++;
-    sum(n, index);
+    return sum(n, index);
   } else {
     console.log(accumulator);
     return accumulator;
