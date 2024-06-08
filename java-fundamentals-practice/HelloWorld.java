@@ -1,6 +1,16 @@
-public class HelloWorld {
-    public static void main(String[] args) {
+class A extends Thread {
+    public void run() {
+        System.out.println("Hello");
+    }
 
-        System.out.println("Hello world");
+    public void run(int a) {
+        System.out.println("Hii");
+    }
+}
+
+class HelloWorld {
+    public static void main(String[] args) {
+        A a = new A();
+        a.start(10);
     }
 }
