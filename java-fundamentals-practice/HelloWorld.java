@@ -11,6 +11,6 @@ class A extends Thread {
 class HelloWorld {
     public static void main(String[] args) {
         A a = new A();
-        a.start(10);
+        a.start();
     }
 }
