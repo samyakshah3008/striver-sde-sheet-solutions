@@ -24,3 +24,13 @@ function sumNaturalNumbers(n) {
 
 const n = 5;
 console.log("Sum of the first", n, "natural numbers is:", sumNaturalNumbers(n));
+
+const findSumOfNNumbers = (n, sum) => {
+  if (n < 1) {
+    console.log(sum);
+    return;
+  }
+  findSumOfNNumbers(n - 1, sum + n);
+};
+
+findSumOfNNumbers(5, 0);
