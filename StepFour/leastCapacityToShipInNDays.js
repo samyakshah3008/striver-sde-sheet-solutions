@@ -5,11 +5,26 @@ const leastCapacityToShipInNDays = (weightArr, days, sum) => {
   // brute force approach
   for (let capacity = weightArr.length - 1; capacity <= sum; capacity++) {
     const requiredDays = findRequiredDays(weightArr, capacity);
-    console.log(requiredDays, "required days");
     if (requiredDays <= days) {
       return capacity; // will be least
     }
   }
+};
+
+const optimizedLeastCapacityToShipInNDays = (weights, days, sum) => {
+  let low = Math.max(...weights);
+  let high = sum;
+
+  while (low <= high) {
+    let mid = Math.floor((low + high) / 2);
+    let numberOfDays = findRequiredDays(weights, mid);
+    if (numberOfDays <= days) {
+      high = mid - 1;
+    } else {
+      low = mid + 1;
+    }
+  }
+  return low; // least capacity
 };
 
 const findSumOfWeight = (weightArr) => {
@@ -23,13 +38,13 @@ const findRequiredDays = (weightArr, capacity) => {
   for (let i = 0; i <= weightArr.length - 1; i++) {
     if (load + weightArr[i] > capacity) {
       requiredDays = requiredDays + 1;
-      load = weight[i];
+      load = weightArr[i];
     } else {
-      load += weight[i];
+      load += weightArr[i];
     }
   }
 
   return requiredDays;
 };
 
-leastCapacityToShipInNDays(weight, days, findSumOfWeight(weight));
+optimizedLeastCapacityToShipInNDays(weight, days, findSumOfWeight(weight));
